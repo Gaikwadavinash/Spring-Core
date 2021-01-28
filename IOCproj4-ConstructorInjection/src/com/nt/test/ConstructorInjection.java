@@ -8,7 +8,8 @@ FileSystemResource res= new FileSystemResource
 ("src/com/nt/cfgs/application.xml");
 XmlBeanFactory  factory= new XmlBeanFactory(res);
 WishMessageGenrator genrator=(WishMessageGenrator)factory.getBean("wmg");
-System.out.println(genrator.genrateWishMessage("raja"));	
+System.out.println(genrator.genrateWishMessage("raja")
+		);	
 }
 
 }

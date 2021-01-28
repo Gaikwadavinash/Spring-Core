@@ -1,5 +1,4 @@
 package com.nt.comp;
-
 public class BudgetCar implements ICar {
 	@Override
 	public void drive() {
