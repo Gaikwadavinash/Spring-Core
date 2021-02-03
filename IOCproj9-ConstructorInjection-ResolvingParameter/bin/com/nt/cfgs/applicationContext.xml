@@ -62,8 +62,8 @@
 <bean id="cust" class="com.nt.beans.Custmer">
 <!-- <property name="cno" value="104"/> -->
 <!-- <property name="cname" value="rajesh"/> -->
-<!-- index start form 0 value are correct output ,index=1,0,3 are thorws Exception -->
-<constructor-arg name="cadd" index="2" type="java.lang.String" value="hyd"/>
+<!-- index start form 0 value are correct output ,index=1,0,3 are thorws Exception  -->
+<constructor-arg  index="2" value="hyd"/>
 <constructor-arg name="cno" value="104"/>
 <constructor-arg  name="cname" value="rajesh"/>
 
