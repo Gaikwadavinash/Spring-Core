@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+ <!-- 4-param Constructor student bean class --> 
+<bean id="st1" class="com.nt.beans.Student">
+<constructor-arg value="101"/>
+<constructor-arg value="ramesh"/>
+<constructor-arg value="hyd"/>
+<constructor-arg value="67.05f"/>
+
+</bean>
+
+ <!-- 3 param Constructor student bean class --> 
+<bean id="st2" class="com.nt.beans.Student">
+<constructor-arg  value="102"/>
+<constructor-arg  value="ravi"/>
+<constructor-arg  value="hyd"/>
+</bean>
+
+<!-- 2-param Constructor student bean Class -->
+
+<bean id="st3" class="com.nt.beans.Student">
+<constructor-arg value="103"/>
+<constructor-arg value="Mark"/>
+</bean>
+<!-- 3-Param Constructor Marks bean class -->
+<!-- <bean id="mk" class="com.nt.beans.Marks"> -->
+<!--  <constructor-arg index="2" value="98"/> -->
+<!--  <constructor-arg index="0" value="85"/> -->
+<!--  <constructor-arg index="1" value="80"/> -->
+<!-- </bean> -->
+
+
+<!-- 3-param Constructor Person bean class-->
+<bean id="ps" class="com.nt.beans.Person">
+<constructor-arg type="int" value="101"/>
+
+<constructor-arg type="long" value="7889996"/>  
+<constructor-arg type="java.lang.String" value="Ramesh"/>
+</bean>
+
+<!-- 3-Param Constructor Marks as same type bean class -->
+<bean id="mk" class="com.nt.beans.Marks">
+ <constructor-arg type="int" value="98"/>
+ <constructor-arg type="int" value="80"/>
+ <constructor-arg type="int" value="89" />
+</bean>
+<!-- 4 Setter Method are used to set the value  -->
+<!-- 4 param Constructor -->
+<!-- <bean id="cust" class="com.nt.beans.Custmer"> -->
+<!--  <property name="cno" value="104"/> --> 
+<!-- <property name="cname" value="rajesh"/> --> 
+<!-- <constructor-arg name="cno" value="104"/> -->
+<!-- <constructor-arg  name="cname" value="rajesh"/> -->
+<!-- <constructor-arg name="cadd" value="hyd"/> -->
+<!-- <constructor-arg name="bilAmount" value="8899.0"/> -->
+<!-- </bean> -->
+
+<!-- 3 types used in one custemer bean class name ,type,index -->
+<bean id="cust" class="com.nt.beans.Custmer">
+<!-- <property name="cno" value="104"/> -->
+<!-- <property name="cname" value="rajesh"/> -->
+<!-- index start form 0 value are correct output ,index=1,0,3 are thorws Exception -->
+<constructor-arg name="cadd" index="2" type="java.lang.String" value="hyd"/>
+<constructor-arg name="cno" value="104"/>
+<constructor-arg  name="cname" value="rajesh"/>
+
+<constructor-arg name="bilAmount" value="8899.0"/>
+</bean>
+</beans>
