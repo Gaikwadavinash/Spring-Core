@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- Student birthDate -->
+<bean id="kailashDoJ" class="java.util.Date">
+<property name="year" value="125"/>
+<property name="month" value="5"/>
+<property name="date" value="30"/>
+</bean>
+<!-- Student BirthDate2 -->
+<bean id="kailashDom" class="java.util.Date">
+<property name="year" value="120"/>
+<property name="month" value="2"/>
+<property name="date" value="10"/>
+</bean>
+
+<!-- Student BirthDate3 -->
+<bean id="kailashDob" class="java.util.Date">
+<property name="year" value="111"/>
+<property name="month" value="6"/>
+<property name="date" value="1"/>
+</bean>
+
+<bean id="rameshDOB" class="java.util.Date">
+      <property name="year" value="85"/>
+      <property name="month" value="10"/>
+      <property name="date" value="23"/>
+  </bean>
+<!-- Spring Bean Cfg File -->
+<bean id="rameshInfo" class="com.nt.beans.PersonalInfo">
+<constructor-arg name="pname" value="Anil"/>
+<constructor-arg name="paddrs" value="Hyd"/>
+<constructor-arg name="dob" ref="kailashDob"/>
+<constructor-arg name="dom" ref="kailashDom"/>
+<constructor-arg name="doj" ref="kailashDoJ"/>
+</bean>
+
+
+<bean id="ramesh2" class="com.nt.beans.PersonalInfo">
+<constructor-arg name="pname" value="Ashok"/>
+<constructor-arg name="paddrs" value="Chennai"/>
+<constructor-arg name="dob" ref="kailashDob"/>
+<!-- <constructor-arg name="dom" ref="kailashDom"/> -->
+<!-- <constructor-arg name="doj" ref="kailashDoJ"/> -->
+<constructor-arg name="dom"><null/></constructor-arg><!-- <null/> Injection -->
+<constructor-arg name="doj"><null/></constructor-arg><!--<null> injection -->
+</bean>
+
+
+<bean id="ramesh3" class="com.nt.beans.PersonalInfo">
+<constructor-arg name="pname" value="vinit"/>
+<constructor-arg name="paddrs" value="Mumbai"/>
+<!-- <constructor-arg name="dob" ref="kailashDob"/> -->
+<!-- <constructor-arg name="dom" ref="kailashDom"/> -->
+<!-- <constructor-arg name="doj" ref="kailashDoJ"/> -->
+<constructor-arg name="dob"><null/></constructor-arg>
+<constructor-arg name="dom"><null/></constructor-arg><!-- <null/> Injection -->
+<constructor-arg name="doj"><null/></constructor-arg><!--<null> injection -->
+</bean>
+
+
+</beans>

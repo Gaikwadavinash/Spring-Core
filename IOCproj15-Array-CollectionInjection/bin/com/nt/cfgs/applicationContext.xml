@@ -35,7 +35,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 			</array>
 		</property>
 		<property name="impDate">
-			<list>
+			<list >
 				<ref bean="dobDt" />
 				<ref bean="coDate" />
 				<ref bean="sysDate" />
