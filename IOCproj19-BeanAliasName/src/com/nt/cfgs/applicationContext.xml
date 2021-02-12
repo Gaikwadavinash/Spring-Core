@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- cfgs dependent Class Spring Bean Object-->
+<bean id="dt" class="java.util.Date"/>
+
+<!-- cfgs Target Class Spring bean Object-->
+<bean id="WishMessageGenerator"   class="com.nt.beans.WishMessageGenerator">
+<property name="date" ref="dt"/>
+</bean>
+
+<alias name="WishMessageGenerator" alias="wmg1"/>
+<alias name="WishMessageGenerator" alias="wmg2"/>
+<alias name="wmg1" alias="wmg3"/>
+<alias name="wmg2" alias="wmg4"/>
+
+</beans>
