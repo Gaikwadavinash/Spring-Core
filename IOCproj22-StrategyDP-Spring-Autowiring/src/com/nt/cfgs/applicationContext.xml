@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans default-autowire="byType"   xmlns="http://www.springframework.org/schema/beans"
+<beans   xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 <!-- Dependent spring bean Class configuration -->
-<bean id="engg" class="com.nt.comps.DiselEngine"  />
+<bean id="engg" class="com.nt.comps.DiselEngine"  scope="prototype" />
 <bean id="pEngine" class="com.nt.comps.PetrolEngine"  />
-<bean id="cngEngine" class="com.nt.comps.CNGEngine" primary="true" />
+<bean id="cngEngine" class="com.nt.comps.CNGEngine" primary="true" scope="prototype" />
 
 <!-- Target  spring Bean  Class Configuration -->
-<bean id="vehicle" class="com.nt.comps.Vehicle"  autowire="byType">
-<property name="type" value="Four-Wheeler"/>
+<bean id="vehicle" class="com.nt.comps.Vehicle"  >
 <constructor-arg ref="pEngine"/>
-
+<property name="type" value="Four-Wheeler"/>
 </bean>
 </beans>

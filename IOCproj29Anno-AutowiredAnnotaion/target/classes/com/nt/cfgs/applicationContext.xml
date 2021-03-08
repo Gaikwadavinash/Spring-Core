@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<!-- Dependent Spring Bean -->
+<!-- Solve Imbuguty Problem -->
+<!--  <bean id="dtdc" class="com.nt.beans.DTDCCourier" /> -->
+<!-- <bean id="dhl" class="com.nt.beans.DHLCourier" /> -->
+<!-- <bean id="bluedart" class="com.nt.beans.BlueDartCourier"/>  -->
+
+<!-- Solution 1 primary ="true" -->
+<!-- <bean id="dtdc" class="com.nt.beans.DTDCCourier" /> -->
+<!-- <bean id="dhl" class="com.nt.beans.DHLCourier" /> -->
+<!-- <bean id="bluedart" class="com.nt.beans.BlueDartCourier" primary="true"/> -->
+
+<!-- using the target Bean property name -->
+<!-- <bean id="courier" class="com.nt.beans.DTDCCourier" /> -->
+<!-- <bean id="dhl" class="com.nt.beans.DHLCourier" /> -->
+<!-- <bean id="bluedart" class="com.nt.beans.BlueDartCourier" primary="true"/> -->
+
+<!-- Using Qualifier tag Spring Bean Dependent Class -->
+<!-- <bean id="dtdc" class="com.nt.beans.DTDCCourier" /> -->
+<!-- <bean id="dhl" class="com.nt.beans.DHLCourier" /> -->
+<!-- <bean id="bluedart" class="com.nt.beans.BlueDartCourier" /> -->
+
+<!-- Alternate of 4th Approach Qualifier tag  -->
+<!-- <bean id="dtdc" class="com.nt.beans.DTDCCourier" > -->
+<!-- <qualifier value="cr1"/> -->
+<!-- </bean> -->
+<!-- <bean id="dhl" class="com.nt.beans.DHLCourier" > -->
+<!-- <qualifier value="cr2"/> -->
+<!-- </bean> -->
+<!-- <bean id="bluedart" class="com.nt.beans.BlueDartCourier" > -->
+<!-- <qualifier value="cr3"/> -->
+<!-- </bean> -->
+<!-- override through annoation -->
+ <bean id="dtdc" class="com.nt.beans.DTDCCourier" />
+<bean id="courier" class="com.nt.beans.DHLCourier" />
+<bean id="bluedart" class="com.nt.beans.BlueDartCourier"/> 
+
+<!-- Target bean class -->
+<bean id="fpkt" class="com.nt.beans.Flipkart" autowire="byName"/>
+<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
+<context:annotation-config />
+</beans>

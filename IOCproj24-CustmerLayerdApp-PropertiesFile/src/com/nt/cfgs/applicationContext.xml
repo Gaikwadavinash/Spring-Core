@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd"> 
+ 
+ <!-- DriverManager DataSource Cfg --> 
+<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+<property name="username" value="scott"/>
+<property name="password" value="tiger"/>
+ </bean>
+<!-- <bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- <property name="driverClassName" value="${jdbc.driver}"/> -->
+<!-- <property name="url" value="${jdbc.url}"/> -->
+<!-- <property name="username" value="${jdbc.username}"/> -->
+<!-- <property name="password" value="${jdbc.password}"/> -->
+<!-- </bean> -->
+
+<!--  <property name="location" value="com/nt/commons/jdbc.properties"/> --> 
+<!--  </bean> --> 
+
+
+<!-- To cfg multiple properties file take the supports of the location --> 
+<!-- property whose  type is array -->  
+<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!--  <property name="locations"> -->
+<!--  <array> --> 
+<!--  <value >com/nt/commons/jdbc.properties</value> --> 
+<!--  <value>com/nt/commons/jdbc1.properties</value> --> 
+<!-- < </array> --> 
+<!-- </property> --> 
+<!-- </bean> -->
+
+<!-- Cfg DAO class -->
+<bean id="custDAO" class="com.nt.dao.CustmerDAOImpl">
+<constructor-arg name="ds" ref="drds"/>
+<property name="os" value="${os.name}"/>
+<property name="lang" value="${user.language}"/>
+</bean>
+<!-- Service class cfg -->
+<bean id="custService" class="com.nt.service.CustmerMangServiceImpl">
+<constructor-arg name="dao" ref="custDAO"/>
+</bean>
+
+  
+<!-- Controller cfg cfg --> 
+ <bean id="controller" class="com.nt.controller.BankController">
+ <constructor-arg name="service" ref="custService"/>
+  </bean>
+  <context:property-placeholder location="com/nt/commons/jdbc.properties,com/nt/commons/jdbc.properties"/>
+</beans>
+
+
