@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Spring bean cfgs file -->
+<bean id="beanId" class="com.nt.beans.CricketBat" lazy-init="true"/>
+
+<bean id="cricketer" class="com.nt.beans.Cricketer" lazy-init="true">
+<property name="name" value="raja"/>
+<property name="jersyNo" value="10"/>
+<!--bean property  to check wheather bean id  bean class cfg  is exist or not  -->
+<property name="beanId" value="abc"/>
+<!-- <property name="beanId"> -->
+<!-- <idref bean="beanId"/> -->
+<!-- </property> -->
+</bean>
+</beans>

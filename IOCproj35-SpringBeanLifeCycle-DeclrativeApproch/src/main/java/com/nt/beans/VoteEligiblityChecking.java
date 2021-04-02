@@ -1,6 +1,6 @@
 package com.nt.beans;
 
-import java.security.PublicKey;
+
 import java.util.Date;
 public class VoteEligiblityChecking {
 private String name;
