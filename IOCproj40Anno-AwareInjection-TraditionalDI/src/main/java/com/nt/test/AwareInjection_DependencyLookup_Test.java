@@ -15,9 +15,10 @@ new ClassPathXmlApplicationContext("com/nt/cfgs/applicationContext.xml");
 Cricketer cricketer= ctx.getBean("cricketer",Cricketer.class);
 System.out.println("=========================");
 //invoked method
-cricketer.bowling();
+cricketer.batting();
+cricketer.batting();
 System.out.println("==========================");
-	cricketer.batting();
+	cricketer.bowling();
 	System.out.println("========================");
 	cricketer.fielding();
 //close container
