@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- static factory method instanstiaition -->
+<bean id="mi" class="com.nt.beans.myInterface" factory-method="createDate"/>
+<!-- dependent Spring bean -->
+<bean id="handler"  class="com.nt.beans.RequestHandler" scope="prototype"/>
+
+<!-- Target Spring Bean class -->
+<bean id="container" class="com.nt.beans.WebContainer" scope="singleton" lazy-init="true">
+<lookup-method bean="handler" name="getHandler"/>
+</bean>
+</beans>
