@@ -1,4 +1,6 @@
 package com.nt.test;
+import java.time.LocalDateTime;
+
 import java.util.*;
 
 
@@ -13,11 +15,11 @@ public class SpringBasicsTest {
 FileSystemResource res= new FileSystemResource
 ("src/com/nt/cfgs/applicationContext.xml");
 //To Create IOC Container(xml )
-@SuppressWarnings("deprecation")
+
 XmlBeanFactory factory = new XmlBeanFactory(res);
 
 Date d=(Date)factory.getBean("dt");
-System.out.println("Date Object Data:"+d);
+//System.out.println("Date Object Data:"+d);
 
 WelcomeGreeting greeting=
 (WelcomeGreeting)factory.getBean("wg");

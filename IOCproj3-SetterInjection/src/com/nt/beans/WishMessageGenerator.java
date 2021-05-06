@@ -16,7 +16,6 @@ public void setDate(Date date) {
 public String message(String user ) {
 	System.out.println("WishMessageGenerator.message()");
 int hour=date.getHours();
-
 if(hour<12) {	
 	return "Good Morning..:"+user;
 }
