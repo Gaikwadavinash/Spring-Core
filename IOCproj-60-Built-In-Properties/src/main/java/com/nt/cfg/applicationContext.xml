@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="info" class="com.nt.beans.PersonalInfo">
+
+<property name="name" value="raja"/>
+<property name="age" value="25.00"/>
+<property name="luckyNumber" value="7896"/>
+<!--  <property name="dob" value="26/07/1995"/>-->
+<property name="mole" value="A mole of chain ,A mole on right Hand"/>
+
+<property name="acedamicPercentage" value="ABC"/>
+<property name="addharCard" value="434386862208"/>
+<property name="favChar" value="A"/>
+<property name="fileLocation"  value="E:\HD Wallpaper.person.jpeg"/>
+<property name="favLocale"  value="hi-IN"/>
+<property name="fbUrl"  value="https://www.facebook.com/gaikwadavinash6986"/>
+<property name="favClass"  value="java.lang.System"/>
+<property name="props"  value="name=raja,age=26,addrs=Mumbai"/>
+<property name="dom"  value="2017-10-20"/>
+</bean>
+</beans>
